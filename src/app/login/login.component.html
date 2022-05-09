@@ -1,0 +1,67 @@
+
+
+
+
+<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Log in</h2>
+
+                
+                <div *ngIf='error' class="alert alert-info">
+                    <p>{{error}}</p>
+                </div>
+                <form [formGroup]='loginForm'  (ngSubmit)="submitLoginForm(loginForm)"> 
+  
+                
+  
+                  <div class="form-outline mb-4">
+                    <label  for="email" class="form-label" for="form3Example3cg">Your Email</label>
+                    <input formControlName='email' type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                    <div *ngIf="loginForm.get('email')?.errors!=null&& loginForm.get('email')?.touched" class="alert my-2 alert-info">
+                        <p *ngIf="loginForm.get('email')?.errors?.['required']" >  Email is Required </p>
+                  
+                        
+            
+                    </div>
+                  
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <label  for="password" class="form-label" for="form3Example4cg">Password</label>
+                    <input formControlName='password' type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                    <div *ngIf="loginForm.get('password')?.errors!=null&& loginForm.get('password')?.touched" class="alert my-2 alert-info">
+                        <p *ngIf="loginForm.get('password')?.errors?.['required']" >  Password is Required </p>
+                       
+                     
+                      
+                      
+                    </div>
+                   
+                  </div>
+  
+               
+               
+  
+                  
+  
+                  <div class="d-flex justify-content-center">
+                    <button  type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                  </div>
+  
+                
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  

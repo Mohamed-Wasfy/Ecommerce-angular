@@ -1,0 +1,52 @@
+@import "../../../css/variable";
+@import "../../../css/mixins";
+
+
+
+.shop__product__option {
+  margin-bottom: 45px;
+
+  p {
+    color: $heading-color;
+    margin-bottom: 0;
+  }
+}
+
+.shop__product__option__right {
+  text-align: right;
+
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .nice-select {
+    float: none;
+    display: inline-block;
+    padding: 0;
+    line-height: 26px;
+    height: auto;
+    border: none;
+    padding-right: 28px;
+
+    &:after {
+      border-bottom: 1.5px solid #111111;
+      border-right: 1.5px solid #111111;
+      height: 8px;
+      right: 12px;
+      width: 8px;
+    }
+
+    span {
+      color: $heading-color;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .list {
+      border-radius: 0;
+    }
+  }
+}
+
+@import "../../../css/responsive";

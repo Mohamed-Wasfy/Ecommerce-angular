@@ -1,0 +1,38 @@
+@import "../../../css/variable";
+@import "../../../css/mixins";
+
+.product__pagination {
+  padding-top: 25px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: $heading-color;
+    height: 30px;
+    width: 30px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+
+    &.active {
+      border-color: $heading-color;
+    }
+
+    &:hover {
+      border-color: $heading-color;
+    }
+  }
+
+  span {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: $heading-color;
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+}
+@import "../../../css/responsive";

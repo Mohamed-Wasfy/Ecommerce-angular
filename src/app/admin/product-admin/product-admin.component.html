@@ -1,0 +1,24 @@
+<div class="product__item">
+  <div
+    style="background-image: url('{{ currentProduct.image }}')"
+    class="product__item__pic set-bg"
+    data-setbg="assets/img/product/product-1.jpg"
+  ></div>
+  <div class="product__item__text">
+    <h6>{{ currentProduct.name }}</h6>
+    <h5>${{ currentProduct.price }}</h5>
+    <div class="product__color__select">
+      <label
+        *ngFor="let color of currentProduct.colors"
+        [style.background-color]="color.colorHex"
+        [for]="color.colorName"
+      >
+        <input type="radio" [id]="color.colorName" />
+      </label>
+    </div>
+  </div>
+  <div class="btnsContainer">
+    <button (click)="openDialog()" mat-flat-button color="edit" class="editBtn">Edit</button>
+    <button mat-flat-button color="delete" class="deleteBtn">Delete</button>
+  </div>
+</div>

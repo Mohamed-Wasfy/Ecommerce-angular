@@ -1,0 +1,119 @@
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+  <div class="offcanvas__option">
+    <div class="offcanvas__links">
+      <a href="#">Sign in</a>
+      <a href="#">FAQs</a>
+    </div>
+    <div class="offcanvas__top__hover">
+      <span>Usd <i class="arrow_carrot-down"></i></span>
+      <ul>
+        <li>USD</li>
+        <li>EUR</li>
+        <li>USD</li>
+      </ul>
+    </div>
+  </div>
+  <div class="offcanvas__nav__option">
+    <a href="#" class="search-switch"
+      ><img src="assets/img/icon/search.png" alt=""
+    /></a>
+    <a href="#"><img src="assets/img/icon/heart.png" alt="" /></a>
+    <a href="#"><img src="assets/img/icon/cart.png" alt="" /> <span>0</span></a>
+    <div class="price">$0.00</div>
+  </div>
+  <div id="mobile-menu-wrap"></div>
+  <div class="offcanvas__text">
+    <p>Free shipping, 30-day return or refund guarantee.</p>
+  </div>
+</div>
+<!-- Offcanvas Menu End -->
+
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-7">
+          <div class="header__top__left">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-5">
+          <div class="header__top__right">
+            <div class="header__top__links">
+              <a *ngIf="!isLogin" routerLink="register">Register</a>
+              <a *ngIf="!isLogin" routerLink="login">Sign in</a>
+              <a *ngIf="isLogin" (click)="goToUserDeatils()" >Welcome {{ userData?.name }}</a>
+              <a *ngIf="isLogin" routerLink="" (click)="isLogOut()">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3">
+        <div class="header__logo">
+          <a href=""><img src="assets/img/logo.png" alt="image" /></a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <nav class="header__menu mobile-menu">
+          <ul>
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/checkout">Check Out</a></li>
+            <li *ngIf="isAdmin"><a href="/admin">Admin</a></li>
+            <!-- <li>
+              <a  href="#">Pages</a>
+              <ul class="dropdown">
+                <li><a  href="./about.html">About Us</a></li>
+                <li><a  href="./shop-details.html">Shop Details</a></li>
+                <li><a  href="cart">Shopping Cart</a></li>
+                <li><a  href="./checkout.html">Check Out</a></li>
+                <li><a  href="./blog-details.html">Blog Details</a></li>
+              </ul>
+            </li> -->
+            <!-- <li><a href="./blog.html">Blog</a></li> -->
+            <!-- <li><a href="./contact.html">Contacts</a></li> -->
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <div class="header__nav__option">
+          <a href="favorite"><img src="assets/img/icon/heart.png" alt="" /></a>
+          <a href="cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:svgjs="http://svgjs.com/svgjs"
+              width="20"
+              height="20"
+              x="0"
+              y="0"
+              viewBox="0 0 512 512"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M402.351,381.058h-203.32l-11.806-47.224h266.587L512,101.085H129.038L108.882,20.46H0v33.4h82.804l82.208,328.827    c-24.053,5.971-41.938,27.737-41.938,53.611c0,30.461,24.781,55.242,55.241,55.242c30.459,0,55.241-24.781,55.241-55.242    c0-7.755-1.613-15.138-4.511-21.841h122.577c-2.897,6.703-4.511,14.086-4.511,21.841c0,30.461,24.781,55.242,55.241,55.242    c30.459,0,55.241-24.781,55.241-55.242C457.592,405.84,432.811,381.058,402.351,381.058z M287.029,300.434h-37.08l-8.284-66.275    h45.365V300.434z M411.912,134.484h57.31l-16.568,66.275h-49.026L411.912,134.484z M399.453,234.16h44.85l-16.568,66.275h-36.566    L399.453,234.16z M320.428,134.484h57.824l-8.284,66.275h-49.539V134.484z M320.428,234.159h45.365l-8.284,66.275h-37.08V234.159z     M287.029,134.484v66.275h-49.539l-8.284-66.275H287.029z M137.388,134.484h58.158l8.284,66.275h-49.873L137.388,134.484z     M162.307,234.159h45.699l8.284,66.275h-37.414L162.307,234.159z M178.315,458.141c-12.043,0-21.841-9.798-21.841-21.842    c0-12.043,9.798-21.841,21.841-21.841s21.841,9.798,21.841,21.841C200.156,448.343,190.358,458.141,178.315,458.141z     M402.351,458.141c-12.043,0-21.841-9.798-21.841-21.842c0-12.043,9.798-21.841,21.841-21.841    c12.043,0,21.841,9.798,21.841,21.841C424.192,448.343,414.394,458.141,402.351,458.141z"
+                  fill="#000000"
+                  data-original="#000000"
+                  class=""
+                ></path>
+              </g>
+            </svg>
+            <span>{{ cartTotal?.cartCount }}</span>
+          </a>
+          <div class="price">${{ cartTotal?.totalPrice?.toFixed(2) }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="canvas__open"><i class="fa fa-bars"></i></div>
+  </div>
+</header>

@@ -1,0 +1,35 @@
+@import "../../../css/variable";
+@import "../../../css/mixins";
+
+.instagram {
+  padding-bottom: 0;
+  padding-bottom: 100px;
+}
+
+.instagram__pic__item {
+  width: 33.33%;
+  float: left;
+  height: 261px;
+  background-position: center center;
+}
+
+.instagram__text {
+  padding-top: 130px;
+
+  h2 {
+    color: $heading-color;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 65px;
+  }
+
+  h3 {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+@import "../../../css/responsive";

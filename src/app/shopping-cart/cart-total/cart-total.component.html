@@ -1,0 +1,12 @@
+<div class="cart__total">
+  <h6>Cart total</h6>
+  <ul>
+    <li>
+      Items <span>{{ cartTotal.items }}</span>
+    </li>
+    <li>
+      Total <span>$ {{ cartTotal.total }}</span>
+    </li>
+  </ul>
+  <a href="/checkout" (click)="moveDataToCheckout()" class="primary-btn">Proceed to checkout</a>
+</div>

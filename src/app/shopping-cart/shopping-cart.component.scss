@@ -1,0 +1,53 @@
+
+@import "../../css/variable";
+@import "../../css/mixins";
+
+.shopping__cart__table {
+  margin-bottom: 30px;
+
+  table {
+    width: 100%;
+    thead {
+      border-bottom: 1px solid #f2f2f2;
+
+      tr {
+        th {
+          color: $heading-color;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding-bottom: 25px;
+        }
+      }
+    }
+  }
+}
+
+.continue__btn {
+  &.update__btn {
+    text-align: right;
+
+    a {
+      color: $white-color;
+      background: $heading-color;
+      border-color: $heading-color;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  a {
+    color: $heading-color;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #e1e1e1;
+    padding: 14px 35px;
+    display: inline-block;
+  }
+}
+
+@import "../../css/responsive";

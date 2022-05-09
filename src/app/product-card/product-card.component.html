@@ -1,0 +1,55 @@
+<div class="product__item">
+  <div
+    style="background-image: url('{{ currentProduct.image }}')"
+    class="product__item__pic set-bg"
+    data-setbg="assets/img/product/product-1.jpg"
+  >
+    <ul class="product__hover">
+      <li class="heart" *ngIf="pageName === 'favorite'" class="removeFavorite">
+        <a>
+          <img
+            (click)="removeFromFavorite()"
+            src="assets/img/icon/heartRed.png"
+            alt=""
+          />
+          <span>Remove</span>
+        </a>
+      </li>
+      <li class="heart" *ngIf="pageName === 'shop'">
+        <a>
+          <!-- <img (click)="addToFavorite($event)" src="assets/img/icon/heart.png" alt="" /> -->
+          <img
+            (click)="ToggleFromFavoriteList()"
+            [src]="
+              isInFavorite
+                ? 'assets/img/icon/heartRed.png'
+                : 'assets/img/icon/heart.png'
+            "
+            alt=""
+          />
+          <span>Favorite</span>
+        </a>
+      </li>
+      <li>
+        <a href="shop/details/{{ currentProduct._id }}"
+          ><img src="assets/img/icon/search.png" alt="" />
+          <span>Details</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="product__item__text">
+    <h6>{{ currentProduct.name }}</h6>
+    <a (click)="ReqAddToCart()" class="add-cart">+ Add To Cart</a>
+    <h5>${{ currentProduct.price }}</h5>
+    <div class="product__color__select">
+      <label
+        *ngFor="let color of currentProduct.colors"
+        [style.background-color]="color.colorHex"
+        [for]="color.colorName"
+      >
+        <input type="radio" [id]="color.colorName" />
+      </label>
+    </div>
+  </div>
+</div>

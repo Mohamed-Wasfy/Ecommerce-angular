@@ -1,0 +1,34 @@
+<td class="product__cart__item">
+  <div class="product__cart__item__pic">
+    <img [src]="currentProduct.imgUrl" alt="" style="height: 90px" />
+  </div>
+  <div class="product__cart__item__text">
+    <h6>{{ currentProduct.title }}</h6>
+    <h5>
+      ${{ currentProduct.price }}
+      <span>{{ this.currentProduct.color }}</span>
+      <span>
+        {{ this.currentProduct.size }}
+      </span>
+    </h5>
+  </div>
+</td>
+<td class="quantity__item">
+  <div class="quantity">
+    <div class="pro-qty-2">
+      <span
+        (click)="decreaseQuantity()"
+        class="fa fa-angle-left dec qtybtn"
+      ></span>
+      <input type="text" [value]="currentProduct.quantity" readonly />
+      <span
+        (click)="increaseQuantity()"
+        class="fa fa-angle-right inc qtybtn"
+      ></span>
+    </div>
+  </div>
+</td>
+<td class="cart__price">${{ currentProduct.totalPrice.toFixed(2) }}</td>
+<td class="cart__close">
+  <i (click)="removeFromCart()" class="fa fa-close"></i>
+</td>
